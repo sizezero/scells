@@ -22,11 +22,13 @@ trait Evaluator { this: Model =>
     case ex: Exception => Double.NaN
   }
 
+  // takes a formula that "may" contain references to other cells and returns the value of those cells
   private def evalList(e: Formula): List[Double] = e match {
     case Range(_, _) => references(e) map (_.value)
     case _ => List(evaluate(e))
   }
   
+  // takes a formula that "may" contain references to other cells and returns references to those other cells
   def references(e: Formula): List[Cell] = e match {
     case Coord(row, column) =>
       List(cells(row)(column))
