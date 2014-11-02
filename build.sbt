@@ -7,6 +7,9 @@ scalaVersion := "2.11.1"
 // Change this to another test framework if you prefer
 libraryDependencies += "org.scalatest" %% "scalatest" % "2.1.6" % "test"
 
+// how do I know what versions are correct?
+libraryDependencies += "org.scala-lang" % "scala-swing" % "2.11.0-M7"
+
 // Uncomment to use Akka
 //libraryDependencies += "com.typesafe.akka" % "akka-actor_2.11" % "2.3.3"
 
